@@ -1,0 +1,50 @@
+// Заголовки, общие БЄМ блоки и проче...
+.page {
+    // .page__main
+    &__main {
+    }
+    // .page__services
+    &__services {
+    }
+    // .page__destinations
+    &__destinations {
+    }
+    // .page__steps
+    &__steps {
+    }
+    // .page__testimonials
+    &__testimonials {
+    }
+    // .page__clients
+    &__clients {
+    }
+    // .page__subscribe
+    &__subscribe {
+    }
+}
+//========================================================================================================================================================
+.header-block {
+    // .header-block__label
+    &__label {
+        font-size: rem(18);
+        font-weight: 600;
+        line-height: math.div(27, 18);
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+        // .header-block__label_up
+        &_up {
+            text-transform: uppercase;
+        }
+    }
+    // .header-block__title
+    &__title {
+        color: #14183e;
+        @include adaptiveValue("font-size", 50, 34);
+        font-weight: 700;
+        line-height: math.div(64, 50);
+        font-family: "Volkhov";
+        text-transform: capitalize;
+    }
+}
+//========================================================================================================================================================

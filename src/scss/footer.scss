@@ -1,0 +1,181 @@
+.footer {
+    @include adaptiveValue("padding-top", 30, 30);
+    @include adaptiveValue("padding-bottom", 80, 50);
+    // .footer__container
+    &__container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        @include adaptiveValue("gap", 83, 30);
+        @media (max-width: $tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+    // .footer__info
+    &__info {
+        @media (max-width: $tablet) {
+            justify-self: center;
+            text-align: center;
+        }
+    }
+    // .footer__logo
+    &__logo {
+        color: #181e4b;
+        font-size: rem(44);
+        line-height: math.div(66, 44);
+        font-weight: 500;
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+    // .footer__text
+    &__text {
+        font-size: rem(13);
+        font-weight: 500;
+        line-height: 124%;
+    }
+    // .footer__menu
+    &__menu {
+    }
+    // .footer__actions
+    &__actions {
+        @media (max-width: $tablet) {
+            justify-self: center;
+            text-align: center;
+        }
+    }
+    // .footer__social
+    &__social {
+        &:not(:last-child) {
+            margin-bottom: rem(25);
+        }
+    }
+    // .footer__app
+    &__app {
+    }
+    // .footer__copy
+    &__copy {
+        text-align: center;
+        @media (min-width: $tablet) {
+            &:last-child {
+                grid-column: span 3;
+            }
+        }
+    }
+}
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(30);
+    @media (max-width: em(500)) {
+        flex-direction: column;
+    }
+    // .menu-footer__column
+    &__column {
+    }
+    // .menu-footer__title
+    &__title {
+        font-size: rem(21);
+        font-weight: 700;
+        line-height: 124%;
+        color: #080809;
+        ._spoller-init & {
+            position: relative;
+            width: 100%;
+            text-align: left;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: rem(12);
+                height: rem(1);
+                transition: all 0.3s ease 0s;
+                width: rem(10);
+                background-color: #000;
+            }
+            &::before {
+                transform: rotate(40deg);
+                right: rem(7);
+            }
+            &::after {
+                transform: rotate(-40deg);
+            }
+        }
+        &._spoller-active {
+            &::before {
+                transform: rotate(-40deg);
+            }
+            &::after {
+                transform: rotate(40deg);
+            }
+        }
+    }
+    // .menu-footer__list
+    &__list {
+        padding-top: rem(34);
+        @media (max-width: em(500)) {
+            padding-top: rem(15);
+        }
+        li {
+            &:not(:last-child) {
+                margin-bottom: rem(12);
+            }
+        }
+        li a {
+            font-size: rem(18);
+            font-weight: 500;
+            line-height: 124%;
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+.social-footer {
+    display: flex;
+    gap: rem(25);
+    @media (max-width: $tablet) {
+        justify-content: center;
+    }
+    // .social-footer__item
+    &__item {
+        background-color: #ffffff;
+        box-shadow: 0 rem(2) rem(10) rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        width: rem(40);
+        height: rem(40);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: rem(12);
+        @media (any-hover: hover) {
+            &:hover {
+                color: #fff;
+                background-color: #ff7d68;
+            }
+        }
+    }
+}
+
+.app-footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: rem(16);
+    column-gap: rem(7);
+    // .app-footer__title
+    &__title {
+        font-size: rem(20);
+        font-weight: 500;
+        line-height: 124%;
+        letter-spacing: 0.005em;
+        grid-column: span 2;
+    }
+    // .app-footer__item
+    &__item {
+        img {
+            max-width: 100%;
+        }
+    }
+}
